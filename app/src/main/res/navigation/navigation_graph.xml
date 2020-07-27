@@ -9,6 +9,24 @@
         android:id="@+id/usersFragment"
         android:name="com.example.cocuschallenge.screens.users.UsersFragment"
         android:label="Users Fragment"
-        tools:layout="@layout/fragment_users" />
+        tools:layout="@layout/fragment_users">
+
+        <action
+            android:id="@+id/action_usersFragment_to_completedChalengesFragment"
+            app:destination="@id/completedChalengesFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/completedChalengesFragment"
+        android:name="com.example.cocuschallenge.screens.challenges.CompletedChalengesFragment"
+        android:label="CompletedChalengesFragment"
+        tools:layout="@layout/fragment_challenges_completed">
+
+        <argument
+            android:name="username"
+            app:argType="string" />
+
+    </fragment>
 
 </navigation>
