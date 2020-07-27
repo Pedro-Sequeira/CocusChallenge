@@ -38,7 +38,6 @@ class ChallengesActivity : AppCompatActivity() {
             )
         )
 
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 

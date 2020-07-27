@@ -7,5 +7,8 @@ class CompletedChallengeRepository @Inject constructor(private val service: Code
     suspend fun fetchCompletedChallenges(username: String) =
         service.fetchCompletedChallenges(username)
 
-    suspend fun fetchChallenge(challengeId: String) = service.fetchChallenge(challengeId)
+    suspend fun fetchAuthoredChallenges(username: String) =
+        service.fetchAuthoredChallenges(username)
+
+    suspend fun fetchChallengeDetails(challengeId: String) = service.fetchChallengeDetails(challengeId)
 }

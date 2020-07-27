@@ -29,4 +29,16 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/navigation_authored"
+        android:name="com.example.cocuschallenge.screens.challenges.authored.AuthoredChalengesFragment"
+        android:label="AuthoredChalengesFragment"
+        tools:layout="@layout/fragment_challenges_authored">
+
+        <action
+            android:id="@+id/action_authoredChalengesFragment_to_challengeDetailsFragment"
+            app:destination="@id/challengeDetailsFragment" />
+
+    </fragment>
+
 </navigation>

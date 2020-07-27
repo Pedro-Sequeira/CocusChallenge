@@ -1,5 +1,6 @@
 package com.example.cocuschallenge.api
 
+import com.example.cocuschallenge.models.AuthoredChallengeResponse
 import com.example.cocuschallenge.models.Challenge
 import com.example.cocuschallenge.models.CompletedChallengeResponse
 import com.example.cocuschallenge.models.User
@@ -18,6 +19,9 @@ interface CodewarsApi {
     @GET("users/{username}/code-challenges/completed?page=0")
     suspend fun fetchCompletedChallenges(@Path("username") username: String): CompletedChallengeResponse
 
+    @GET("users/{username}/code-challenges/authored?page=0")
+    suspend fun fetchAuthoredChallenges(@Path("username") username: String): AuthoredChallengeResponse
+
     @GET("code-challenges/{id}")
-    suspend fun fetchChallenge(@Path("id") id: String): Challenge
+    suspend fun fetchChallengeDetails(@Path("id") id: String): Challenge
 }

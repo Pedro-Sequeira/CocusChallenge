@@ -35,6 +35,6 @@ class ChallengeDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.fetchChallenge(args.id)
+        viewModel.fetchChallengeDetails(args.id)
     }
 }
