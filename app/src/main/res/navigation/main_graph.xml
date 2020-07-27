@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/usersFragment">
+
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="com.example.cocuschallenge.screens.users.UsersFragment"
+        android:label="Users Fragment"
+        tools:layout="@layout/fragment_users">
+
+        <action
+            android:id="@+id/action_usersFragment_to_challengesActivity"
+            app:destination="@id/challengesActivity">
+
+        </action>
+
+    </fragment>
+
+    <activity
+        android:id="@+id/challengesActivity"
+        android:name="com.example.cocuschallenge.screens.challenges.ChallengesActivity"
+        android:label="activity_challenges"
+        tools:layout="@layout/activity_challenges">
+
+    </activity>
+
+</navigation>

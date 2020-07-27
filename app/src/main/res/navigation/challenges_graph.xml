@@ -2,30 +2,14 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navigation_graph"
-    app:startDestination="@id/usersFragment">
+    android:id="@+id/challenges_graph"
+    app:startDestination="@id/navigation_completed">
 
     <fragment
-        android:id="@+id/usersFragment"
-        android:name="com.example.cocuschallenge.screens.users.UsersFragment"
-        android:label="Users Fragment"
-        tools:layout="@layout/fragment_users">
-
-        <action
-            android:id="@+id/action_usersFragment_to_completedChalengesFragment"
-            app:destination="@id/completedChalengesFragment" />
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/completedChalengesFragment"
+        android:id="@+id/navigation_completed"
         android:name="com.example.cocuschallenge.screens.challenges.completed.CompletedChalengesFragment"
         android:label="CompletedChalengesFragment"
         tools:layout="@layout/fragment_challenges_completed">
-
-        <argument
-            android:name="username"
-            app:argType="string" />
 
         <action
             android:id="@+id/action_completedChalengesFragment_to_challengeDetailsFragment"

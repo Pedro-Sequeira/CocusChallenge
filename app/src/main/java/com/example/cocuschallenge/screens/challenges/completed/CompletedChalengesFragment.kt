@@ -7,15 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.navArgs
 import com.example.cocuschallenge.databinding.FragmentChallengesCompletedBinding
+import com.example.cocuschallenge.screens.challenges.ChallengesActivity
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class CompletedChalengesFragment : Fragment() {
 
-    private val args: CompletedChalengesFragmentArgs by navArgs()
     private lateinit var binding: FragmentChallengesCompletedBinding
     private val viewModel: CompletedChallengesViewModel by viewModels()
 
@@ -30,8 +29,13 @@ class CompletedChalengesFragment : Fragment() {
         binding = FragmentChallengesCompletedBinding.inflate(inflater)
         binding.viewModel = viewModel
         initAdapter()
-        viewModel.fetchCompletedChallenges(args.username)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val activity = activity as ChallengesActivity
+        viewModel.fetchCompletedChallenges(activity.username)
     }
 
     private fun initAdapter() {

@@ -1,14 +1,17 @@
 package com.example.cocuschallenge.screens.users
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import com.example.cocuschallenge.databinding.FragmentUsersBinding
+import com.example.cocuschallenge.screens.challenges.ChallengesActivity
 import dagger.hilt.android.AndroidEntryPoint
+
+const val USERNAME_KEY = "username"
 
 @AndroidEntryPoint
 class UsersFragment : Fragment() {
@@ -33,9 +36,9 @@ class UsersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.searchUser("g964")
         binding.button.setOnClickListener {
-            val action =
-                UsersFragmentDirections.actionUsersFragmentToCompletedChalengesFragment("g964")
-            findNavController().navigate(action)
+            val intent = Intent(requireActivity(), ChallengesActivity::class.java)
+            intent.putExtra(USERNAME_KEY, "g964")
+            startActivity(intent)
         }
     }
 }
