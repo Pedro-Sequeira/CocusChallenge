@@ -1,5 +1,6 @@
 package com.example.cocuschallenge.api
 
+import com.example.cocuschallenge.models.Challenge
 import com.example.cocuschallenge.models.CompletedChallengeResponse
 import com.example.cocuschallenge.models.User
 import retrofit2.http.GET
@@ -16,4 +17,7 @@ interface CodewarsApi {
 
     @GET("users/{username}/code-challenges/completed?page=0")
     suspend fun fetchCompletedChallenges(@Path("username") username: String): CompletedChallengeResponse
+
+    @GET("code-challenges/{id}")
+    suspend fun fetchChallenge(@Path("id") id: String): Challenge
 }

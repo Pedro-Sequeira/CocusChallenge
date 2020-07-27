@@ -6,4 +6,6 @@ import javax.inject.Inject
 class CompletedChallengeRepository @Inject constructor(private val service: CodewarsApi) {
     suspend fun fetchCompletedChallenges(username: String) =
         service.fetchCompletedChallenges(username)
+
+    suspend fun fetchChallenge(challengeId: String) = service.fetchChallenge(challengeId)
 }

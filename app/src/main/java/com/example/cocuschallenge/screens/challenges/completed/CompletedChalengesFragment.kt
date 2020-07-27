@@ -1,4 +1,4 @@
-package com.example.cocuschallenge.screens.challenges
+package com.example.cocuschallenge.screens.challenges.completed
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,8 +9,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.example.cocuschallenge.databinding.FragmentChallengesCompletedBinding
-import com.example.cocuschallenge.databinding.FragmentUsersBinding
-import com.example.cocuschallenge.screens.users.UsersViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

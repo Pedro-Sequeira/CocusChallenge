@@ -9,11 +9,16 @@
 
         <variable
             name="challenge"
-            type="com.example.cocuschallenge.models.Challenge" />
+            type="com.example.cocuschallenge.models.CompletedChallenge" />
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
+        android:onClick="@{clickListener}"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_small"
         android:layout_marginTop="@dimen/margin_small"

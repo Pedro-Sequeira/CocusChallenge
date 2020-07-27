@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class CompletedChallengeResponse(
     @SerializedName("data")
-    val challenges: List<Challenge>,
+    val completedChallenges: List<CompletedChallenge>,
     @SerializedName("totalItems")
     val totalItems: Int,
     @SerializedName("totalPages")

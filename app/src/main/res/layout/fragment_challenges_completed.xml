@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".views.MainActivity">
+    tools:context=".screens.challenges.CompletedChallengesFragment">
 
     <data>
 
         <variable
             name="viewModel"
-            type="com.example.cocuschallenge.screens.challenges.CompletedChallengesViewModel" />
+            type="com.example.cocuschallenge.screens.challenges.completed.CompletedChallengesViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
