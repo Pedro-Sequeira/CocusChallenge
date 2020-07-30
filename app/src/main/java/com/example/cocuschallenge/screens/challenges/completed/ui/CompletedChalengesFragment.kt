@@ -1,4 +1,4 @@
-package com.example.cocuschallenge.screens.challenges.completed
+package com.example.cocuschallenge.screens.challenges.completed.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater

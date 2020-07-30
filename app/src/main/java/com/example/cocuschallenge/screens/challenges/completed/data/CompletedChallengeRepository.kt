@@ -1,4 +1,4 @@
-package com.example.cocuschallenge.data
+package com.example.cocuschallenge.screens.challenges.completed.data
 
 import com.example.cocuschallenge.api.CodewarsApi
 import javax.inject.Inject

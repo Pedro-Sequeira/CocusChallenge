@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.cocuschallenge.screens.challenges.completed.CompletedChallengesViewModel" />
+            type="com.example.cocuschallenge.screens.challenges.completed.ui.CompletedChallengesViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

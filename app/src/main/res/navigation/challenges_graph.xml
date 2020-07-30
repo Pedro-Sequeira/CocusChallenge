@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_completed"
-        android:name="com.example.cocuschallenge.screens.challenges.completed.CompletedChalengesFragment"
+        android:name="com.example.cocuschallenge.screens.challenges.completed.ui.CompletedChalengesFragment"
         android:label="CompletedChalengesFragment"
         tools:layout="@layout/fragment_challenges_completed">
 

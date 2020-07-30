@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.cocuschallenge.databinding.FragmentChallengeDetailsBinding
-import com.example.cocuschallenge.screens.challenges.completed.CompletedChallengesAdapter
+import com.example.cocuschallenge.screens.challenges.completed.ui.CompletedChallengesAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

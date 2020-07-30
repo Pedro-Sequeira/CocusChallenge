@@ -1,26 +1,11 @@
 package com.example.cocuschallenge.screens.users
 
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.cocuschallenge.data.UserRepository
-import com.example.cocuschallenge.models.User
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
+import com.example.cocuschallenge.screens.users.data.UserRepository
 
-class UsersViewModel @ViewModelInject constructor(
-    private val repository: UserRepository,
-    private val scope: CoroutineScope
-) : ViewModel() {
+class UsersViewModel @ViewModelInject constructor(private val repository: UserRepository) :
+    ViewModel() {
 
-    private val _user = MutableLiveData<User>()
-    val user: LiveData<User> = _user
-
-    fun searchUser(username: String) {
-        scope.launch {
-            val user = repository.searchUser(username)
-            _user.postValue(user)
-        }
-    }
+    fun searchUser(query: String) = repository.searchUser(query)
 }

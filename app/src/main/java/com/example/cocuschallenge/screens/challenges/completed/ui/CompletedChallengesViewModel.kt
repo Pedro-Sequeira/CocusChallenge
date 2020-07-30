@@ -1,10 +1,10 @@
-package com.example.cocuschallenge.screens.challenges.completed
+package com.example.cocuschallenge.screens.challenges.completed.ui
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.cocuschallenge.data.CompletedChallengeRepository
+import com.example.cocuschallenge.screens.challenges.completed.data.CompletedChallengeRepository
 import com.example.cocuschallenge.models.CompletedChallenge
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
