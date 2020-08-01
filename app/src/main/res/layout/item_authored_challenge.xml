@@ -9,7 +9,7 @@
 
         <variable
             name="challenge"
-            type="com.example.cocuschallenge.models.AuthoredChallenge" />
+            type="com.example.cocusChallenge.models.AuthoredChallenge" />
 
         <variable
             name="clickListener"
@@ -44,7 +44,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/challenge_name"
+                android:id="@+id/textView_challengeDetails_title"
                 style="@style/ListItemValue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
                 android:text="@{challenge.description}"
                 app:layout_constraintBaseline_toBaselineOf="@id/description_label"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/challenge_name"
+                app:layout_constraintStart_toStartOf="@id/textView_challengeDetails_title"
                 tools:text="Write a function that takes in a binary string and returns the equivalent decoded text (the text is ASCII encoded). Each 8 bits on the binary string represent 1 character on the ASCII table. The input string will always be a valid binary string." />
 
             <androidx.constraintlayout.widget.Barrier

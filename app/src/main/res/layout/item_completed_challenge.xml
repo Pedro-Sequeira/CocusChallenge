@@ -9,7 +9,7 @@
 
         <variable
             name="challenge"
-            type="com.example.cocuschallenge.models.CompletedChallenge" />
+            type="com.example.cocusChallenge.models.CompletedChallenge" />
 
         <variable
             name="clickListener"
@@ -47,7 +47,7 @@
                 app:layout_constraintVertical_chainStyle="packed" />
 
             <TextView
-                android:id="@+id/challenge_name"
+                android:id="@+id/textView_challengeDetails_title"
                 style="@style/ListItemValue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
                 dateFormatted="@{challenge.completedAt}"
                 app:layout_constraintBaseline_toBaselineOf="@id/completed_label"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/challenge_name"
+                app:layout_constraintStart_toStartOf="@id/textView_challengeDetails_title"
                 tools:text="2020-01-22T07:51:43.952Z" />
 
             <androidx.constraintlayout.widget.Barrier

@@ -1,8 +1,12 @@
 <resources>
+    <!-- General -->
+    <string name="all_retryButton">Retry</string>
+
     <!-- App and Fragment Titles -->
     <string name="app_name">Cocus Challenge</string>
     <string name="search_user_fragment">Codewars Users</string>
-    <string name="challenges_fragment">Challenges</string>
+    <string name="completed_challenges_fragment">Completed Challenges</string>
+    <string name="authored_challenges_fragment">Authored Challenges</string>
     <string name="challenge_details_fragment">Challenge Details</string>
 
     <!-- Search -->
@@ -15,6 +19,7 @@
     <string name="username_label">Username</string>
     <string name="rank_label">Rank</string>
     <string name="best_language_label">Best language</string>
+    <string name="leaderboard_format">#%d</string>
 
     <!-- Challenge Item -->
     <string name="challenge_label">Name</string>

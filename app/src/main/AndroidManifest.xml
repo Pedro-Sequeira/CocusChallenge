@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.cocuschallenge">
+    package="com.example.cocusChallenge">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".CocusChallengeApp"
+        android:name="com.example.cocusChallenge.app.CocusChallengeApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,17 +14,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".screens.users.UsersActivity">
+        <activity android:name="com.example.cocusChallenge.screens.users.UsersActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".screens.challenges.ChallengesActivity">
+        <activity android:name="com.example.cocusChallenge.screens.challenges.ChallengesActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".screens.users.UsersActivity" />
+                android:value="com.example.cocusChallenge.screens.users.UsersActivity" />
         </activity>
 
     </application>

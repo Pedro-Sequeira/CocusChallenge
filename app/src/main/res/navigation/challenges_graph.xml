@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/navigation_completed"
-        android:name="com.example.cocuschallenge.screens.challenges.completed.ui.CompletedChalengesFragment"
-        android:label="CompletedChalengesFragment"
+        android:name="com.example.cocusChallenge.screens.challenges.completed.CompletedChallengesFragment"
+        android:label="@string/completed_challenges_fragment"
         tools:layout="@layout/fragment_challenges_completed">
 
         <action
@@ -19,20 +19,20 @@
 
     <fragment
         android:id="@+id/challengeDetailsFragment"
-        android:name="com.example.cocuschallenge.screens.challenges.details.ChallengeDetailsFragment"
-        android:label="ChallengeDetailsFragment"
+        android:name="com.example.cocusChallenge.screens.challenges.details.ChallengeDetailsFragment"
+        android:label="@string/challenge_details_fragment"
         tools:layout="@layout/fragment_challenge_details">
 
         <argument
-            android:name="id"
+            android:name="challengeId"
             app:argType="string" />
 
     </fragment>
 
     <fragment
         android:id="@+id/navigation_authored"
-        android:name="com.example.cocuschallenge.screens.challenges.authored.AuthoredChalengesFragment"
-        android:label="AuthoredChalengesFragment"
+        android:name="com.example.cocusChallenge.screens.challenges.authored.AuthoredChalengesFragment"
+        android:label="@string/authored_challenges_fragment"
         tools:layout="@layout/fragment_challenges_authored">
 
         <action
