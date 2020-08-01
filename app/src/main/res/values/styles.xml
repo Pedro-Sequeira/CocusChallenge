@@ -7,6 +7,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Users List -->
+    <style name="UserListEmpty" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
     <!-- List Item -->
     <style name="ListItemLabel" parent="TextAppearance.MaterialComponents.Subtitle2">
         <item name="android:textColor">@color/colorPrimary</item>

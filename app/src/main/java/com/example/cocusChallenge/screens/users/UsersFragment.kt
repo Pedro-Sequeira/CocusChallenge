@@ -3,15 +3,13 @@ package com.example.cocusChallenge.screens.users
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.KeyEvent
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.example.cocusChallenge.R
 import com.example.cocusChallenge.data.Result
 import com.example.cocusChallenge.databinding.FragmentUsersBinding
 import com.example.cocusChallenge.utils.hideKeyboard
@@ -39,7 +37,9 @@ class UsersFragment : Fragment() {
         binding = FragmentUsersBinding.inflate(inflater)
 
         binding.viewModel = viewModel
+        binding.lifecycleOwner = this
 
+        setHasOptionsMenu(true)
         return binding.root
     }
 
@@ -52,6 +52,28 @@ class UsersFragment : Fragment() {
         initEditTextListeners()
 
         binding.usersList.adapter = adapter
+        viewModel.users.observe(viewLifecycleOwner, {
+            adapter.submitList(it)
+        })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_filter, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.order_rank -> {
+                viewModel.usersByRank().observe(this, {
+                    adapter.submitList(it.sortedByDescending { user ->
+                        user.honor
+                    })
+                })
+                return false
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     private fun initEditTextListeners() {
@@ -108,7 +130,10 @@ class UsersFragment : Fragment() {
             when (result) {
                 is Result.Success -> {
                     binding.progressBarUsers.isVisible = false
-                    adapter.submitList(listOf(result.data))
+                    result.data?.let {
+                        adapter.submitList(result.data)
+                        binding.textViewUsersEmptyListTitle.isVisible = false
+                    }
                 }
                 is Result.Error -> {
                     binding.progressBarUsers.isVisible = false

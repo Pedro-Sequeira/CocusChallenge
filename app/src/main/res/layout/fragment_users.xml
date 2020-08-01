@@ -7,6 +7,8 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="viewModel"
             type="com.example.cocusChallenge.screens.users.UsersViewModel" />
@@ -28,7 +30,7 @@
                 android:id="@+id/editText_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Username"
+                android:hint="@string/search_hint"
                 android:imeOptions="actionSearch"
                 android:inputType="textNoSuggestions"
                 android:selectAllOnFocus="true" />
@@ -52,6 +54,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_users_emptyListTitle"
+            style="@style/UserListEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/empty_list"
+            android:visibility="@{viewModel.users.empty ? View.VISIBLE : View.GONE}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -18,9 +18,9 @@ class UserAdapter @Inject constructor() :
     ListAdapter<User, UserAdapter.ViewHolder>(DiffCallback()) {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val favorite = getItem(position)
+        val user = getItem(position)
         holder.apply {
-            bind(createOnClickListener(favorite), favorite)
+            bind(createOnClickListener(user), user)
         }
     }
 

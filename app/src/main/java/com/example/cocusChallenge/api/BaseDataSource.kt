@@ -1,5 +1,6 @@
 package com.example.cocusChallenge.api
 
+import com.example.cocusChallenge.api.models.ApiError
 import com.example.cocusChallenge.data.Result
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -17,7 +18,8 @@ abstract class BaseDataSource {
             } else {
                 val gSon = Gson()
                 val type = object : TypeToken<ApiError>() {}.type
-                val errorResponse: ApiError? = gSon.fromJson(response.errorBody()!!.charStream(), type)
+                val errorResponse: ApiError? =
+                    gSon.fromJson(response.errorBody()!!.charStream(), type)
                 return Result.Error(errorResponse?.reason!!)
             }
         } catch (throwable: Throwable) {
@@ -27,6 +29,6 @@ abstract class BaseDataSource {
                 }
             }
         }
-        return Result.Error("Unknown error")
+        return Result.Error("Error fetching network results")
     }
 }

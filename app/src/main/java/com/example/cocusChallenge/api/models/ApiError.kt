@@ -1,4 +1,4 @@
-package com.example.cocusChallenge.api
+package com.example.cocusChallenge.api.models
 
 import com.google.gson.annotations.SerializedName
 

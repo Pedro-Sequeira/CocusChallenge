@@ -10,10 +10,12 @@
     <string name="challenge_details_fragment">Challenge Details</string>
 
     <!-- Search -->
-    <string name="search_hint">Search users</string>
+    <string name="search_hint">Username</string>
     <string name="recent_search_header">Recent Searches</string>
     <string name="order_button"><u>Order by rank</u></string>
     <string name="user_not_found">User not found!</string>
+    <string name="empty_list">Nothing to show yet…</string>
+    <string name="order_by_rank">Order By Rank</string>
 
     <!-- User Item -->
     <string name="username_label">Username</string>

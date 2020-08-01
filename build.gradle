@@ -20,6 +20,7 @@ buildscript {
         lifecycle_version = '2.2.0'
         lifecycle_viewModel_version = '2.3.0-alpha06'
         paging_version = '3.0.0-alpha03'
+        room_version = '2.3.0-alpha01'
 
         // Testing dependencies
         junit_version = '4.13'
@@ -33,7 +34,7 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.android.tools.build:gradle:${gradle_version}"
+        classpath "com.android.tools.build:gradle:$gradle_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
