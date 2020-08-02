@@ -9,7 +9,7 @@
 
         <variable
             name="challenge"
-            type="com.example.cocusChallenge.api.models.ApiAuthoredChallenge" />
+            type="com.example.cocusChallenge.models.Challenge" />
 
         <variable
             name="clickListener"

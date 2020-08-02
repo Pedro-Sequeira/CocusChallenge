@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
+import androidx.paging.filter
 import com.example.cocusChallenge.databinding.FragmentChallengesCompletedBinding
 import com.example.cocusChallenge.screens.challenges.ChallengesActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -41,7 +42,7 @@ class CompletedChallengesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val activity = activity as ChallengesActivity
-        initAdapter(activity)
+        initAdapter()
         lifecycleScope.launch {
             viewModel.fetchCompletedChallenges(activity.username).collectLatest {
                 adapter.submitData(it)
@@ -57,7 +58,7 @@ class CompletedChallengesFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun initAdapter(activity: ChallengesActivity) {
+    private fun initAdapter() {
         binding.challengesList.adapter = adapter.withLoadStateHeaderAndFooter(
             header = ChallengesLoadStateAdapter { adapter.retry() },
             footer = ChallengesLoadStateAdapter { adapter.retry() }
@@ -66,18 +67,6 @@ class CompletedChallengesFragment : Fragment() {
             binding.challengesList.isVisible = loadState.source.refresh is LoadState.NotLoading
             binding.progressBarCompletedChallenges.isVisible = loadState.source.refresh is LoadState.Loading
             binding.buttonCompletedChallengesRetry.isVisible = loadState.source.refresh is LoadState.Error
-
-            val errorState = loadState.source.append as? LoadState.Error
-                ?: loadState.source.prepend as? LoadState.Error
-                ?: loadState.append as? LoadState.Error
-                ?: loadState.prepend as? LoadState.Error
-            errorState?.let {
-                Toast.makeText(
-                    activity,
-                    "\uD83D\uDE28 Wooops ${it.error}",
-                    Toast.LENGTH_LONG
-                ).show()
-            }
         }
     }
 }

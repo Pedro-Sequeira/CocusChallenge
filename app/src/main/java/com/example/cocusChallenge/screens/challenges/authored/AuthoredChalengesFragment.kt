@@ -56,10 +56,13 @@ class AuthoredChalengesFragment : Fragment() {
                 when (result) {
                     is Result.Success -> {
                         binding.progressBarAuthoredChallenges.isVisible = false
-                        adapter.submitList(result.data?.apiAuthoredChallenges)
+                        if (result.data.isNullOrEmpty()) {
+                            binding.textViewAuthoredChallengesEmptyList.isVisible = true
+                        }
+                        adapter.submitList(result.data)
                     }
                     is Result.Error -> {
-                        binding.progressBarAuthoredChallenges.isVisible = false
+                        binding.textViewAuthoredChallengesEmptyList.isVisible = false
                         Toast.makeText(
                             requireContext(),
                             result.error,

@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/usersFragment"
         android:name="com.example.cocusChallenge.screens.users.UsersFragment"
-        android:label="Users Fragment"
+        android:label="@string/search_user_fragment"
         tools:layout="@layout/fragment_users">
 
         <action
@@ -22,7 +22,6 @@
     <activity
         android:id="@+id/challengesActivity"
         android:name="com.example.cocusChallenge.screens.challenges.ChallengesActivity"
-        android:label="@string/search_user_fragment"
         tools:layout="@layout/activity_challenges">
 
     </activity>

@@ -19,5 +19,8 @@ data class DbChallenge(
     val description: String,
 
     @ColumnInfo(name = "completedAt")
-    val completedAt: String?
+    val completedAt: String?,
+
+    @ColumnInfo(name = "user")
+    val user: String?
 )

@@ -23,6 +23,9 @@
     <string name="best_language_label">Best language</string>
     <string name="leaderboard_format">#%d</string>
 
+    <!-- Challenges -->
+    <string name="empty_list_challenges">Sadly, there\'s no challenge to show…</string>
+
     <!-- Challenge Item -->
     <string name="challenge_label">Name</string>
     <string name="description_label">Description</string>

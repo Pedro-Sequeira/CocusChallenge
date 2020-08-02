@@ -1,5 +1,6 @@
 package com.example.cocusChallenge.api
 
+import com.example.cocusChallenge.api.models.ApiAuthoredChallenge
 import com.example.cocusChallenge.api.models.ApiChallenge
 import com.example.cocusChallenge.api.models.ApiUser
 import com.example.cocusChallenge.database.entities.DbChallenge
@@ -28,7 +29,20 @@ class ApiMapper @Inject constructor() {
                 id,
                 name,
                 description,
+                null,
                 null
+            )
+        }
+    }
+
+    fun mapApiAuthoredChallengeToDbChallenge(username: String, apiChallenge: ApiAuthoredChallenge): DbChallenge {
+        return with(apiChallenge) {
+            DbChallenge(
+                id,
+                name,
+                description,
+                null,
+                username
             )
         }
     }

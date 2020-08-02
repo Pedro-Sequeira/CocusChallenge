@@ -8,6 +8,7 @@ import androidx.paging.cachedIn
 import com.example.cocusChallenge.api.models.ApiCompletedChallenge
 import com.example.cocusChallenge.screens.challenges.data.ChallengeRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 
 class CompletedChallengesViewModel @ViewModelInject constructor(
     private val repository: ChallengeRepository

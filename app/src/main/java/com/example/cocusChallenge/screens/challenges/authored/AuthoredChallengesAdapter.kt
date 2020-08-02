@@ -9,12 +9,13 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cocusChallenge.databinding.ItemAuthoredChallengeBinding
 import com.example.cocusChallenge.api.models.ApiAuthoredChallenge
+import com.example.cocusChallenge.models.Challenge
 import dagger.hilt.android.scopes.ActivityRetainedScoped
 import javax.inject.Inject
 
 @ActivityRetainedScoped
 class AuthoredChallengesAdapter @Inject constructor() :
-    ListAdapter<ApiAuthoredChallenge, AuthoredChallengesAdapter.ViewHolder>(DiffCallback()) {
+    ListAdapter<Challenge, AuthoredChallengesAdapter.ViewHolder>(DiffCallback()) {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val challenge = getItem(position)
@@ -45,7 +46,7 @@ class AuthoredChallengesAdapter @Inject constructor() :
 
     class ViewHolder(private val binding: ItemAuthoredChallengeBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(listener: View.OnClickListener, item: ApiAuthoredChallenge?) {
+        fun bind(listener: View.OnClickListener, item: Challenge?) {
             binding.apply {
                 clickListener = listener
                 challenge = item
@@ -54,18 +55,12 @@ class AuthoredChallengesAdapter @Inject constructor() :
         }
     }
 
-    private class DiffCallback : DiffUtil.ItemCallback<ApiAuthoredChallenge>() {
-        override fun areItemsTheSame(
-            oldItem: ApiAuthoredChallenge,
-            newItem: ApiAuthoredChallenge
-        ): Boolean {
+    private class DiffCallback : DiffUtil.ItemCallback<Challenge>() {
+        override fun areItemsTheSame(oldItem: Challenge, newItem: Challenge): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(
-            oldItem: ApiAuthoredChallenge,
-            newItem: ApiAuthoredChallenge
-        ): Boolean {
+        override fun areContentsTheSame(oldItem: Challenge, newItem: Challenge): Boolean {
             return oldItem == newItem
         }
     }
