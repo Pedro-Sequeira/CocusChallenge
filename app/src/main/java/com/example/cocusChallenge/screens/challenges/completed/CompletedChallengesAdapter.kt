@@ -57,17 +57,13 @@ class CompletedChallengesAdapter @Inject constructor() :
     }
 
     private class DiffCallback : DiffUtil.ItemCallback<CompletedChallenge>() {
-        override fun areItemsTheSame(
-            oldItem: CompletedChallenge,
-            newItem: CompletedChallenge
-        ): Boolean {
+        override fun areItemsTheSame(oldItem: CompletedChallenge, newItem: CompletedChallenge)
+                : Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(
-            oldItem: CompletedChallenge,
-            newItem: CompletedChallenge
-        ): Boolean {
+        override fun areContentsTheSame(oldItem: CompletedChallenge, newItem: CompletedChallenge)
+                : Boolean {
             return oldItem == newItem
         }
     }

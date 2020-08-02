@@ -2,6 +2,7 @@ package com.example.cocusChallenge.screens.challenges.completed
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -33,6 +34,7 @@ class CompletedChallengesFragment : Fragment() {
     ): View? {
         binding = FragmentChallengesCompletedBinding.inflate(inflater)
         binding.viewModel = viewModel
+        (requireActivity() as ChallengesActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
         return binding.root
     }
 
@@ -46,6 +48,13 @@ class CompletedChallengesFragment : Fragment() {
             }
         }
         binding.buttonCompletedChallengesRetry.setOnClickListener { adapter.retry() }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            requireActivity().finish()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun initAdapter(activity: ChallengesActivity) {
