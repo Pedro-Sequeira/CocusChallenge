@@ -8,13 +8,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cocusChallenge.databinding.ItemAuthoredChallengeBinding
-import com.example.cocusChallenge.models.AuthoredChallenge
+import com.example.cocusChallenge.api.models.ApiAuthoredChallenge
 import dagger.hilt.android.scopes.ActivityRetainedScoped
 import javax.inject.Inject
 
 @ActivityRetainedScoped
 class AuthoredChallengesAdapter @Inject constructor() :
-    ListAdapter<AuthoredChallenge, AuthoredChallengesAdapter.ViewHolder>(DiffCallback()) {
+    ListAdapter<ApiAuthoredChallenge, AuthoredChallengesAdapter.ViewHolder>(DiffCallback()) {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val challenge = getItem(position)
@@ -45,7 +45,7 @@ class AuthoredChallengesAdapter @Inject constructor() :
 
     class ViewHolder(private val binding: ItemAuthoredChallengeBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(listener: View.OnClickListener, item: AuthoredChallenge?) {
+        fun bind(listener: View.OnClickListener, item: ApiAuthoredChallenge?) {
             binding.apply {
                 clickListener = listener
                 challenge = item
@@ -54,17 +54,17 @@ class AuthoredChallengesAdapter @Inject constructor() :
         }
     }
 
-    private class DiffCallback : DiffUtil.ItemCallback<AuthoredChallenge>() {
+    private class DiffCallback : DiffUtil.ItemCallback<ApiAuthoredChallenge>() {
         override fun areItemsTheSame(
-            oldItem: AuthoredChallenge,
-            newItem: AuthoredChallenge
+            oldItem: ApiAuthoredChallenge,
+            newItem: ApiAuthoredChallenge
         ): Boolean {
             return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(
-            oldItem: AuthoredChallenge,
-            newItem: AuthoredChallenge
+            oldItem: ApiAuthoredChallenge,
+            newItem: ApiAuthoredChallenge
         ): Boolean {
             return oldItem == newItem
         }

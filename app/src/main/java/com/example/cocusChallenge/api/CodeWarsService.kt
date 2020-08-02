@@ -1,7 +1,7 @@
 package com.example.cocusChallenge.api
 
 import com.example.cocusChallenge.api.models.AuthoredChallengeResponse
-import com.example.cocusChallenge.models.Challenge
+import com.example.cocusChallenge.api.models.ApiChallenge
 import com.example.cocusChallenge.api.models.CompletedChallengeResponse
 import com.example.cocusChallenge.api.models.ApiUser
 import retrofit2.Response
@@ -24,5 +24,5 @@ interface CodeWarsService {
     suspend fun fetchAuthoredChallenges(@Path("username") username: String): Response<AuthoredChallengeResponse>
 
     @GET("code-challenges/{id}")
-    suspend fun fetchChallengeDetails(@Path("id") id: String): Response<Challenge>
+    suspend fun fetchChallengeDetails(@Path("id") id: String): Response<ApiChallenge>
 }

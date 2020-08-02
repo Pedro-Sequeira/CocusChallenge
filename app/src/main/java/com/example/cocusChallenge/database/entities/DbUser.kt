@@ -1,4 +1,4 @@
-package com.example.cocusChallenge.database
+package com.example.cocusChallenge.database.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

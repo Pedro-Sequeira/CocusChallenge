@@ -3,7 +3,8 @@ package com.example.cocusChallenge.di
 import android.content.Context
 import androidx.room.Room
 import com.example.cocusChallenge.database.AppDatabase
-import com.example.cocusChallenge.database.UserDao
+import com.example.cocusChallenge.database.dao.ChallengeDao
+import com.example.cocusChallenge.database.dao.UserDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,5 +27,8 @@ object DatabaseModule {
 
     @Provides
     fun provideUserDao(database: AppDatabase): UserDao = database.userDao()
+
+    @Provides
+    fun provideChallengerDao(database: AppDatabase): ChallengeDao = database.challengeDao()
 
 }

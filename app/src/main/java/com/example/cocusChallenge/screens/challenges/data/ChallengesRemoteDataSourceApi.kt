@@ -1,11 +1,11 @@
 package com.example.cocusChallenge.screens.challenges.data
 
-import com.example.cocusChallenge.api.BaseDataSource
+import com.example.cocusChallenge.api.ApiBaseDataSource
 import com.example.cocusChallenge.api.CodeWarsService
 import javax.inject.Inject
 
-class ChallengesRemoteDataSource @Inject constructor(private val service: CodeWarsService) :
-    BaseDataSource() {
+class ChallengesRemoteDataSourceApi @Inject constructor(private val service: CodeWarsService) :
+    ApiBaseDataSource() {
 
     suspend fun fetchAuthoredChallenges(username: String) = getResult {
         service.fetchAuthoredChallenges(username)

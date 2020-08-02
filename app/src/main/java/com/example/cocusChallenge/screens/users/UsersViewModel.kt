@@ -12,6 +12,6 @@ class UsersViewModel @ViewModelInject constructor(
 
     val users = repository.fetchUsers()
 
-    fun usersByRank() = repository.usersByRank()
+    fun usersByRank() = repository.fetchUsers()
 
 }

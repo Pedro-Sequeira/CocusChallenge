@@ -3,6 +3,7 @@ package com.example.cocusChallenge.screens.challenges.details
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.cocusChallenge.api.models.ApiChallenge
 import com.example.cocusChallenge.models.Challenge
 import com.example.cocusChallenge.screens.challenges.data.ChallengeRepository
 

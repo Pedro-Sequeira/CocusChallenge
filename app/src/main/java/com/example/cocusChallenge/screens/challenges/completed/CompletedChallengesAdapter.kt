@@ -8,13 +8,13 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cocusChallenge.databinding.ItemCompletedChallengeBinding
-import com.example.cocusChallenge.models.CompletedChallenge
+import com.example.cocusChallenge.api.models.ApiCompletedChallenge
 import dagger.hilt.android.scopes.ActivityRetainedScoped
 import javax.inject.Inject
 
 @ActivityRetainedScoped
 class CompletedChallengesAdapter @Inject constructor() :
-    PagingDataAdapter<CompletedChallenge, CompletedChallengesAdapter.ViewHolder>(DiffCallback()) {
+    PagingDataAdapter<ApiCompletedChallenge, CompletedChallengesAdapter.ViewHolder>(DiffCallback()) {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val challenge = getItem(position)
@@ -47,7 +47,7 @@ class CompletedChallengesAdapter @Inject constructor() :
 
     class ViewHolder(private val binding: ItemCompletedChallengeBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(listener: View.OnClickListener, item: CompletedChallenge?) {
+        fun bind(listener: View.OnClickListener, item: ApiCompletedChallenge?) {
             binding.apply {
                 clickListener = listener
                 challenge = item
@@ -56,13 +56,13 @@ class CompletedChallengesAdapter @Inject constructor() :
         }
     }
 
-    private class DiffCallback : DiffUtil.ItemCallback<CompletedChallenge>() {
-        override fun areItemsTheSame(oldItem: CompletedChallenge, newItem: CompletedChallenge)
+    private class DiffCallback : DiffUtil.ItemCallback<ApiCompletedChallenge>() {
+        override fun areItemsTheSame(oldItem: ApiCompletedChallenge, newItem: ApiCompletedChallenge)
                 : Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: CompletedChallenge, newItem: CompletedChallenge)
+        override fun areContentsTheSame(oldItem: ApiCompletedChallenge, newItem: ApiCompletedChallenge)
                 : Boolean {
             return oldItem == newItem
         }

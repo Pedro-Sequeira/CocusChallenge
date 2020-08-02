@@ -1,8 +1,8 @@
-package com.example.cocusChallenge.models
+package com.example.cocusChallenge.api.models
 
 import com.google.gson.annotations.SerializedName
 
-data class CompletedChallenge(
+data class ApiCompletedChallenge(
     @SerializedName("id")
     val id: String,
     @SerializedName("completedAt")

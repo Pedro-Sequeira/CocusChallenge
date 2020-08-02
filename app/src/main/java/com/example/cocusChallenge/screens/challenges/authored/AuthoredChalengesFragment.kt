@@ -56,7 +56,7 @@ class AuthoredChalengesFragment : Fragment() {
                 when (result) {
                     is Result.Success -> {
                         binding.progressBarAuthoredChallenges.isVisible = false
-                        adapter.submitList(result.data?.authoredChallenges)
+                        adapter.submitList(result.data?.apiAuthoredChallenges)
                     }
                     is Result.Error -> {
                         binding.progressBarAuthoredChallenges.isVisible = false

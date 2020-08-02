@@ -7,7 +7,7 @@ import com.google.gson.reflect.TypeToken
 import retrofit2.HttpException
 import retrofit2.Response
 
-abstract class BaseDataSource {
+abstract class ApiBaseDataSource {
 
     protected suspend fun <T> getResult(call: suspend () -> Response<T>): Result<T> {
         try {
